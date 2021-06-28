@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+/* TODO
+
+allow Selection of multiple cells
+Generate words, and find a place it fits in grid
+allow diagonal selection?
+
+*/
+
 class Cell extends React.Component {
   render() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -98,6 +106,7 @@ class Board extends React.Component {
   }
 }
 
+
 class WordSearch extends React.Component {
   render() {
     return (
@@ -124,9 +133,6 @@ class WordSearch extends React.Component {
   return text;
   console.log(makeid());
 }*/
-
-
-
 
 
 ReactDOM.render(
