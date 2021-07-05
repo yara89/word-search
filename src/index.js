@@ -12,9 +12,14 @@ allow diagonal selection?
 */
 
 class Cell extends React.Component {
+  constructor(props) {      
+     super(props);     
+      this.handleClick = this.handleClick.bind(this); }
+
+  handleClick(e) { this.props.onCellClick(this.props.rowIndex, this.props.colIndex, this.props.value);  }
   render() {
     return (
-      <button className="cell">
+      <button className="cell" onClick={this.handleClick} >
        {this.props.value}
       </button>
     );
@@ -23,9 +28,15 @@ class Cell extends React.Component {
 
 
 class Grid extends React.Component {
+  constructor(props) {      
+    super(props);     
+     this.handleClick = this.handleClick.bind(this); }
+
   renderCell(i) {
     return <Cell />;
   }
+  handleClick(rowIndex, colIndex, val){
+  console.log("hello " + val)}
 
   render() {
     const status = 'you have # words left';
@@ -35,7 +46,7 @@ class Grid extends React.Component {
     this.props.values.forEach(element => {
       let wordList =[];
         for (let i = 0; i < element.length; i++){
-          wordList.push(<Cell value={element[i]}/>          )
+          wordList.push(<Cell value={element[i]}  onCellClick={this.handleClick}  />) 
         }
         board.push(<div className="board-row">{wordList}</div>)
       });
@@ -55,8 +66,8 @@ class WordSearch extends React.Component {
   constructor(props) {
     super(props);
     let wordList = ['house', 'cat', 'leg'];
-    let rowCount = 20;
-    let colCount = 20;
+    let rowCount = 10;
+    let colCount = 10;
     this.grid = logic.getWordGrid(wordList, rowCount, colCount);
   }
   render() {
