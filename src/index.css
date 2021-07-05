@@ -5,21 +5,6 @@ body {
   text-align: center;
 }
 
-
-/*ol, ul {
-  padding-left: 50px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.z {
-  margin-bottom: 10px;
-}
-*/
 .cell {
   background: #cde;
   border: 1px solid #000;

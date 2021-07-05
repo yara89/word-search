@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import * as logic from './wordsearch.js'
+import getWordGrid from './wordsearch';
+//import getWordGrid, { wordList, rowCount, colCount } from './wordsearch.js';
+//import getRandomInt, {min, max} from './wordsearch.js';
 
 /* TODO
 
@@ -13,31 +15,38 @@ allow diagonal selection?
 
 class Cell extends React.Component {
   render() {
+    //getWordGrid(wordList, rowCount, colCount) 
+      
     return (
       <button className="cell">
-       {this.props.value}
+        { }
       </button>
     );
   }
 }
 
+// class gridColumn
+// class gridRow ??
 
 class Grid extends React.Component {
-  renderCell(i) {
-    return <Cell />;
-  }
-
+ // renderCell(i) {
+//    return <Cell />;}
+  
+  
   render() {
     const status = 'you have # words left';
-
+    //getWordGrid(wordList, rowCount, colCount) ;
     const board = [];
 
-    this.props.values.forEach(element => {
+    this.props.grid.array.forEach(element => {
       let wordList =[];
         for (let i = 0; i < element.length; i++){
-          wordList.push(<Cell value={element[i]}/>          )
+          wordList.push(<div className="board-row">
+          {element[i]}
+          </div>
+          )
         }
-        board.push(<div className="board-row">{wordList}</div>)
+        board.push(<div className="container"></div>)
       });
     
     return (
@@ -48,22 +57,14 @@ class Grid extends React.Component {
     );
   }
 }
-   
 
 
 class WordSearch extends React.Component {
-  constructor(props) {
-    super(props);
-    let wordList = ['house', 'cat', 'leg'];
-    let rowCount = 20;
-    let colCount = 20;
-    this.grid = logic.getWordGrid(wordList, rowCount, colCount);
-  }
   render() {
     return (
       <div className="game">
         <div className="game-board">
-          <Grid values={this.grid} />
+          <Grid />
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
@@ -73,6 +74,7 @@ class WordSearch extends React.Component {
     );
   }
 }
+
 
 
 ReactDOM.render(
