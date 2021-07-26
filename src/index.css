@@ -20,7 +20,7 @@ body {
   width: 55px;
 }
 
-.cell:focus {
+.selected {
   outline: rgb(42, 42, 142) solid 1.5px;
   background: #00519b;
 
