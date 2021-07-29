@@ -7,12 +7,13 @@ export default class BoardCell extends React.Component {
     }
 
             handleClick(e) { 
-                //console.log("hello " + this.props.letter);
+                console.log("hello " + this.props.letter);
                 this.props.onCellClick(this.props.rowIndex, this.props.colIndex, this.props.value); //
             }
             getClasses = () => {
                 let classes=['cell'];
                 if (this.props.isSelected) classes.push('selected');
+                //if (this.props.isHighlighted) classes.push('isHighlighted');
 
                 return classes.join(' ');
 

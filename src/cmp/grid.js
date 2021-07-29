@@ -28,15 +28,16 @@ export default class Grid extends React.Component {
   
           rows++;
         });
+
+        let letter = [];
       
-        let isSelected = [];
-  
-  
+        let isSelected = letter.join();
+        console.log(isSelected);
+        
       return (
         <div>
           <div className="status">{status}</div>
           {board}
-          <div id="word-list"></div>
           </div>
       );
     }
