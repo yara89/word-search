@@ -23,7 +23,7 @@ function getWordGrid(wordList, rowCount, colCount) {
         }
       } 
 
-      let colStart = getRandomInt(0, colCount - word.length - 1);
+      let colStart = getRandomInt(0, colCount - word.length);
       console.log("placing " + word + " in " + randomRow + " " + colStart);
       
       for (let i = 0; i < word.length; i++) {
@@ -44,6 +44,46 @@ function getWordGrid(wordList, rowCount, colCount) {
     }
 
     return grid;
+} 
+/* higihlightedChars = {"r0-c0": true,
+          "r1-c0": true,
+          "r2-c0": true,
+        }, 
+  this.wordList = ['house', 'dog', 'leg', 'react', 'hello'];
+this.grid = [['d','o','g','t','s'],['h','e','h','s', 'm',],['d','i','h','l','m',]]
+      }*/
+
+function getWordsFound (highlightedChars, wordList, grid) {
+  let found = []; 
+  for (let r=0; r < grid.length; r++) {
+    let row = grid[r];
+    let currSelectedWord = '';
+    for (let c=0; c < row.length; c++) {
+     let letter = row[c];
+     let highlightedIndex = "r" + r + "-c" + c;
+     let isHighlighted = highlightedChars.hasOwnProperty(highlightedIndex);
+     if (isHighlighted) { 
+       currSelectedWord = currSelectedWord + letter;
+     } else {
+       
+       //console.log("trying to find " + currSelectedWord);
+        // check if currSelectedWord is word
+        if (wordList.includes(currSelectedWord.toLowerCase())) {
+          found.push(currSelectedWord.toLowerCase());
+
+        } 
+        // reset 
+        currSelectedWord = "";
+     } 
+    }   // end loop over columns
+    if (wordList.includes(currSelectedWord.toLowerCase())) {
+      found.push(currSelectedWord.toLowerCase());
+    } 
+
+  } //end loop over rows
+  console.log(found + " is found")
+  return found
+
 }
 /**
  * Returns a random integer between min (inclusive) and max .
@@ -59,4 +99,4 @@ function getRandomInt(min, max) {
 }
 
 
-module.exports = { getWordGrid };
+module.exports = { getWordGrid, getWordsFound };

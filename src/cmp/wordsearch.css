@@ -2,4 +2,6 @@ ol, ul {
     padding-left: 30px;
   }
   
- 
+ .selected {
+   font: 100;
+ }

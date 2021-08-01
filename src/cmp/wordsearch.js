@@ -3,6 +3,9 @@ import React from 'react';
 import Grid from './grid';
 import * as logic from '../logic/app';
 import ShowWordList from './wordList';
+import Table from './otherTable';
+import BoardCell from './BoardCell';
+//import Status from './status';
 
 
 
@@ -13,39 +16,49 @@ export default class WordSearch extends React.Component {
         highlightedChars: {
         },
       };
-      let drag = false;
-
-      let wordList = ['house', 'cat', 'leg', 'react', 'hello'];
+      //let drag = false;
+      
+      this.wordList = ['house', 'dog', 'leg', 'react', 'hello'];
       let rowCount = 10;
       let colCount = 10;
 
-      this.grid = logic.getWordGrid(wordList, rowCount, colCount);
+      this.grid = logic.getWordGrid(this.wordList, rowCount, colCount);
+
      // this.showWordList(document.getElementById("list"));
-      this.handleClick = this.handleClick.bind(this); 
+      this.handleHighlightChange = this.handleHighlightChange.bind(this); 
     }
 
-    handleClick(rowIndex, colIndex, val){
+    handleHighlightChange(rowIndexStart, rowIndexEnd, colIndexStart, colIndexEnd, newHighlightedState){
       const newHighlightedChars = this.cloneObject(this.state.highlightedChars); 
-      let charIndex = "r" + rowIndex + "-c" + colIndex;
-      const value = (this.props.letter);
-
-        if (newHighlightedChars.hasOwnProperty(charIndex)) {
-          delete newHighlightedChars[charIndex];
-        } else {
-          newHighlightedChars[charIndex] = true;
-        }
+      if (rowIndexStart == rowIndexEnd){ // if horizontal
+        for (let c = colIndexStart; c <= colIndexEnd; c++) {
+          let charIndex = "r" + rowIndexStart + "-c" + c;
+          
+          if (newHighlightedState) {
+            newHighlightedChars[charIndex] = true;
+          } else {
+            delete newHighlightedChars[charIndex];
+          }
       
-      //console.log(rowIndex); 
-      //console.log(newHighlightedChars); 
-      //console.log(value); 
-      //console.log(newHighlightedChars[charIndex]); 
-      //console.log(word + ' in ' + rowIndex + ' ' + colIndex);
-      console.log(value);
+        }
 
-
+      } else if (colIndexStart == colIndexEnd) {// if vertical
+        for (let r = rowIndexStart; r <= rowIndexEnd; r++) {
+          let charIndex = "r" + r + "-c" + colIndexStart;
+          
+          if (newHighlightedState) {
+            newHighlightedChars[charIndex] = true;
+          } else {
+            delete newHighlightedChars[charIndex];
+          }
+      
+        }
+      }
+    
+    
       this.setState({
-        highlightedChars: newHighlightedChars, 
-          })
+       highlightedChars: newHighlightedChars, 
+      })
     }
 
   cloneObject(obj) { 
@@ -56,12 +69,12 @@ export default class WordSearch extends React.Component {
       return (
         <div className="game">
           <div className="game-board">
-            <Grid values={this.grid} highlightedChars={this.state.highlightedChars} onCellClick={this.handleClick} />
+            <Grid values={this.grid} highlightedChars={this.state.highlightedChars} handleHighlightChange={this.handleHighlightChange}  />
           </div>
           <div className="game-info">
                 <ol>Welcome to Word Sreach react game</ol>
-                <ol> <ShowWordList/></ol>
-                <ol></ol>
+                <ol> <ShowWordList wordList={this.wordList} foundWordList={logic.getWordsFound(this.state.highlightedChars,this.wordList,this.grid)}/></ol>
+
         </div>
         </div>
 

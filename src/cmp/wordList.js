@@ -2,10 +2,9 @@ import React from 'react';
 
 export default class ShowWordList extends React.Component {
   render() {
-  const wordList = ['house', 'cat', 'leg', 'react', 'hello'];
-  return (
+    return (
     	<div>
-      {wordList.map(word => <h2>{word}</h2>)}
+      {this.props.wordList.map(word => <h2 className={this.props.foundWordList.includes(word) ? 'wordfound' : ''}>{word}</h2>)}
       	</div>
     )
 }

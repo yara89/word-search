@@ -18,6 +18,7 @@ body {
   padding: 0;
   text-align: center;
   width: 55px;
+  user-select: none; 
 }
 
 .selected {
@@ -48,3 +49,28 @@ body {
 
 }
 
+.wordfound {
+  text-decoration: line-through;
+}
+
+
+table {
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+}
+
+span {
+    width: 30px;
+    border: 1px solid;
+    padding: 5px;
+    user-select: none;
+}
+
+span.selection {
+    background: #adf;
+}
+
+span:hover:not(.selection) {
+    background: #cfefff;
+}
