@@ -14,7 +14,8 @@ export default class Grid extends React.Component {
         isSelecting: false,
         startRow:0,
         startCol:0,
-        shouldHighlight:0
+        shouldHighlight:0,
+        startHightlightedChars:0
       }
     
      }
@@ -28,10 +29,16 @@ export default class Grid extends React.Component {
     beginSelection(rowIndex, colIndex, val) {
       console.log("beginSelection " + rowIndex + " " + colIndex);
       let shouldHighlight = !this.cellSelected(rowIndex,colIndex);
+      let startHightlightedChars = this.cloneObject(this.props.highlightedChars);
 
-
-      this.setState({isSelecting: true, startRow:rowIndex, startCol:colIndex, shouldHighlight:shouldHighlight } )
-      this.props.handleHighlightChange(rowIndex, rowIndex, colIndex, colIndex, shouldHighlight);
+      this.setState({
+        isSelecting: true, 
+        startRow:rowIndex, 
+        startCol:colIndex, 
+        shouldHighlight:shouldHighlight,
+        startHightlightedChars: startHightlightedChars
+      } )
+      this.props.handleHighlightChange(rowIndex, rowIndex, colIndex, colIndex, shouldHighlight, startHightlightedChars);
       
     }
 
@@ -46,13 +53,17 @@ export default class Grid extends React.Component {
     updateSelection(rowIndex, colIndex, val) {
      if (this.state.isSelecting) {
        if (this.state.startRow===rowIndex) {
-            this.props.handleHighlightChange(rowIndex, rowIndex, Math.min(colIndex, this.state.startCol), Math.max(colIndex, this.state.startCol), this.state.shouldHighlight);
+            this.props.handleHighlightChange(rowIndex, rowIndex, Math.min(colIndex, this.state.startCol), Math.max(colIndex, this.state.startCol), this.state.shouldHighlight, this.state.startHightlightedChars);
        } else if (this.state.startCol===colIndex) {
-        this.props.handleHighlightChange(Math.min(rowIndex, this.state.startRow), Math.max(rowIndex, this.state.startRow), colIndex, colIndex, this.state.shouldHighlight);
+        this.props.handleHighlightChange(Math.min(rowIndex, this.state.startRow), Math.max(rowIndex, this.state.startRow), colIndex, colIndex, this.state.shouldHighlight, this.state.startHightlightedChars);
    } 
        console.log("updateSelection" );
      }
     } 
+
+    cloneObject(obj) { 
+      return JSON.parse(JSON.stringify(obj));
+      }
 
     render() {
       //const status = 'you have' + ' ' + {words.length} + ' words left';

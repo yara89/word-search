@@ -26,8 +26,9 @@ export default class WordSearch extends React.Component {
       this.handleHighlightChange = this.handleHighlightChange.bind(this); 
     }
 
-    handleHighlightChange(rowIndexStart, rowIndexEnd, colIndexStart, colIndexEnd, newHighlightedState){
-      const newHighlightedChars = this.cloneObject(this.state.highlightedChars); 
+    handleHighlightChange(rowIndexStart, rowIndexEnd, colIndexStart, colIndexEnd, newHighlightedState, startHightlightedChars){
+      const newHighlightedChars = this.cloneObject(startHightlightedChars); 
+    
       if (rowIndexStart == rowIndexEnd){ // if horizontal
         for (let c = colIndexStart; c <= colIndexEnd; c++) {
           let charIndex = "r" + rowIndexStart + "-c" + c;
