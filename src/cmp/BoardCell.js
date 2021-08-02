@@ -26,14 +26,12 @@ export default class BoardCell extends React.Component {
     getClasses = () => {
         let classes=['cell'];
         if (this.props.isSelected) classes.push('selected');
-        //if (this.props.isHighlighted) classes.push('isHighlighted');
 
         return classes.join(' ');
 
     }
         
     
-            // console.log(this.props.classes)
 
     render() {
         return( 
@@ -49,15 +47,3 @@ export default class BoardCell extends React.Component {
 
 
 };
-
- /*   getClasses = () => {
-        let classes = ['cell']; //all cells get the 'cell' class, and maybe additional:
-
-        if (this.props.isGivenValue) classes.push('given');
-        if (this.props.isSelected) classes.push('selected');
-        if (this.props.isHighlighted) classes.push('related');
-        if (this.props.isConflicting) classes.push('wrong');
-        
-        return classes.join(' ');
-    }
-*/
