@@ -51,9 +51,10 @@ body {
 
 .wordfound {
   text-decoration: line-through;
+  color: #fa8f45;
 }
 
-
+/*
 table {
     display: flex;
     width: 200px;
@@ -74,3 +75,4 @@ span.selection {
 span:hover:not(.selection) {
     background: #cfefff;
 }
+*/

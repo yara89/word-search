@@ -3,7 +3,6 @@ import React from 'react';
 import Grid from './grid';
 import * as logic from '../logic/app';
 import ShowWordList from './wordList';
-import Table from './otherTable';
 import BoardCell from './BoardCell';
 //import Status from './status';
 

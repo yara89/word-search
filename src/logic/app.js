@@ -37,7 +37,7 @@ function getWordGrid(wordList, rowCount, colCount) {
     for (let r = 0; r < rowCount; r++) {
         for (let c = 0; c < colCount; c++) {
           if ( grid[r][c] === '' ) {
-            const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)]
+            const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)].toUpperCase()
             grid[r][c] = randomCharacter;
           }
       }
