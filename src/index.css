@@ -54,6 +54,17 @@ body {
   color: #fa8f45;
 }
 
+
+.success {
+  width: auto;
+  background-color: #7c6;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
 /*
 table {
     display: flex;

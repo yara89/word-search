@@ -45,13 +45,6 @@ function getWordGrid(wordList, rowCount, colCount) {
 
     return grid;
 } 
-/* higihlightedChars = {"r0-c0": true,
-          "r1-c0": true,
-          "r2-c0": true,
-        }, 
-  this.wordList = ['house', 'dog', 'leg', 'react', 'hello'];
-this.grid = [['d','o','g','t','s'],['h','e','h','s', 'm',],['d','i','h','l','m',]]
-      }*/
 
 function getWordsFound (highlightedChars, wordList, grid) {
   let found = []; 
@@ -66,7 +59,6 @@ function getWordsFound (highlightedChars, wordList, grid) {
        currSelectedWord = currSelectedWord + letter;
      } else {
        
-       //console.log("trying to find " + currSelectedWord);
         // check if currSelectedWord is word
         if (wordList.includes(currSelectedWord.toLowerCase())) {
           found.push(currSelectedWord.toLowerCase());

@@ -4,7 +4,8 @@ import Grid from './grid';
 import * as logic from '../logic/app';
 import ShowWordList from './wordList';
 import BoardCell from './BoardCell';
-//import Status from './status';
+//import Status from './status'; // import Finished from './status';
+
 
 
 
@@ -15,7 +16,6 @@ export default class WordSearch extends React.Component {
         highlightedChars: {
         },
       };
-      //let drag = false;
       
       this.wordList = ['house', 'dog', 'leg', 'react', 'hello'];
       let rowCount = 10;
@@ -23,7 +23,6 @@ export default class WordSearch extends React.Component {
 
       this.grid = logic.getWordGrid(this.wordList, rowCount, colCount);
 
-     // this.showWordList(document.getElementById("list"));
       this.handleHighlightChange = this.handleHighlightChange.bind(this); 
     }
 
