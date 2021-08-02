@@ -3,7 +3,7 @@ import React from 'react';
 export default class ShowWordList extends React.Component {
     renderSuccessMessage() {
         if (this.props.wordList.length === this.props.foundWordList.length) {
-          return (<h2> Congratulations </h2>)
+          return (<h1> Congratulations, you found all the words </h1>)
         }
 
     }
