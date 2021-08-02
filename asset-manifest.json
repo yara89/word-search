@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/word-search/static/css/main.efda5424.chunk.css",
+    "main.css": "/word-search/static/css/main.2dc87d60.chunk.css",
     "main.js": "/word-search/static/js/main.88319948.chunk.js",
     "main.js.map": "/word-search/static/js/main.88319948.chunk.js.map",
     "runtime-main.js": "/word-search/static/js/runtime-main.51da8adf.js",
@@ -8,13 +8,13 @@
     "static/js/2.34f4e528.chunk.js": "/word-search/static/js/2.34f4e528.chunk.js",
     "static/js/2.34f4e528.chunk.js.map": "/word-search/static/js/2.34f4e528.chunk.js.map",
     "index.html": "/word-search/index.html",
-    "static/css/main.efda5424.chunk.css.map": "/word-search/static/css/main.efda5424.chunk.css.map",
+    "static/css/main.2dc87d60.chunk.css.map": "/word-search/static/css/main.2dc87d60.chunk.css.map",
     "static/js/2.34f4e528.chunk.js.LICENSE.txt": "/word-search/static/js/2.34f4e528.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.51da8adf.js",
     "static/js/2.34f4e528.chunk.js",
-    "static/css/main.efda5424.chunk.css",
+    "static/css/main.2dc87d60.chunk.css",
     "static/js/main.88319948.chunk.js"
   ]
 }
