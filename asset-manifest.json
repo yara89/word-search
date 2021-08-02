@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/word-search/static/css/main.eb4eae34.chunk.css",
-    "main.js": "/word-search/static/js/main.84c91aa8.chunk.js",
-    "main.js.map": "/word-search/static/js/main.84c91aa8.chunk.js.map",
+    "main.css": "/word-search/static/css/main.92d72b6e.chunk.css",
+    "main.js": "/word-search/static/js/main.69609d1a.chunk.js",
+    "main.js.map": "/word-search/static/js/main.69609d1a.chunk.js.map",
     "runtime-main.js": "/word-search/static/js/runtime-main.51da8adf.js",
     "runtime-main.js.map": "/word-search/static/js/runtime-main.51da8adf.js.map",
-    "static/js/2.9da52dc7.chunk.js": "/word-search/static/js/2.9da52dc7.chunk.js",
-    "static/js/2.9da52dc7.chunk.js.map": "/word-search/static/js/2.9da52dc7.chunk.js.map",
+    "static/js/2.34f4e528.chunk.js": "/word-search/static/js/2.34f4e528.chunk.js",
+    "static/js/2.34f4e528.chunk.js.map": "/word-search/static/js/2.34f4e528.chunk.js.map",
     "index.html": "/word-search/index.html",
-    "static/css/main.eb4eae34.chunk.css.map": "/word-search/static/css/main.eb4eae34.chunk.css.map",
-    "static/js/2.9da52dc7.chunk.js.LICENSE.txt": "/word-search/static/js/2.9da52dc7.chunk.js.LICENSE.txt"
+    "static/css/main.92d72b6e.chunk.css.map": "/word-search/static/css/main.92d72b6e.chunk.css.map",
+    "static/js/2.34f4e528.chunk.js.LICENSE.txt": "/word-search/static/js/2.34f4e528.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.51da8adf.js",
-    "static/js/2.9da52dc7.chunk.js",
-    "static/css/main.eb4eae34.chunk.css",
-    "static/js/main.84c91aa8.chunk.js"
+    "static/js/2.34f4e528.chunk.js",
+    "static/css/main.92d72b6e.chunk.css",
+    "static/js/main.69609d1a.chunk.js"
   ]
 }
