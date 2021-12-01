@@ -1,3 +1,7 @@
+## Word Search Puzzle 
+
+built word search puzzle, only works horizontally, and displays 5 words. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
